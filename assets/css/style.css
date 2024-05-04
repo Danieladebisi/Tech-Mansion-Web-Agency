@@ -998,16 +998,13 @@ button:hover {
 .insta-card:is(:hover, :focus-within) .card-content { opacity: 1; }
 
 .footer-bottom {
-  color: white;
+  color: var(--white);
   font-size: var(--fs-8);
   padding-block: 40px;
   border-block-start: 1px solid var(--onyx);
 }
 
-.copyright {
-  margin-block-end: 15px;
-  color: white;
-}
+.copyright { margin-block-end: 15px; }
 
 .footer-bottom-list {
   display: flex;
@@ -1017,14 +1014,7 @@ button:hover {
 
 .footer-bottom-link { transition: var(--transition-1); }
 
-.footer-bottom-link {
-  --link-color: var(--mustard);
-}
-
-.footer-bottom-link:hover,
-.footer-bottom-link:focus {
-  color: var(--link-color);
-}
+.footer-bottom-link:is(:hover, :focus) { color: var(--mustard); }
 
 
 
