@@ -998,7 +998,7 @@ button:hover {
 .insta-card:is(:hover, :focus-within) .card-content { opacity: 1; }
 
 .footer-bottom {
-  color: var(--white);
+  color: white;
   font-size: var(--fs-8);
   padding-block: 40px;
   border-block-start: 1px solid var(--onyx);
