@@ -1014,7 +1014,14 @@ button:hover {
 
 .footer-bottom-link { transition: var(--transition-1); }
 
-.footer-bottom-link:is(:hover, :focus) { color: var(--mustard); }
+.footer-bottom-link {
+  --link-color: var(--mustard);
+}
+
+.footer-bottom-link:hover,
+.footer-bottom-link:focus {
+  color: var(--link-color);
+}
 
 
 
