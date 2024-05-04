@@ -1004,7 +1004,10 @@ button:hover {
   border-block-start: 1px solid var(--onyx);
 }
 
-.copyright { margin-block-end: 15px; }
+.copyright {
+  margin-block-end: 15px;
+  color: white;
+}
 
 .footer-bottom-list {
   display: flex;
