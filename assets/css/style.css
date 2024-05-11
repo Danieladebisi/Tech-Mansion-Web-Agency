@@ -1359,13 +1359,6 @@ button:hover {
     grid-template-columns: 1fr 1fr;
     gap: 40px;
   }
-  .wrapper {
-    text-align: center; /* Center the content horizontally */
-}
-
-.btn {
-    display: inline-block; /* Make the button inline-block to center it */
-}
 
   .hero .wrapper { flex-wrap: nowrap; }
 
