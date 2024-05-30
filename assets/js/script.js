@@ -133,13 +133,13 @@ document.addEventListener("DOMContentLoaded", function () {
       // Calculate total cost
       let baseCost = 0;
       switch (websiteType) {
-          case "1":
+          case "basic":
               baseCost = 500; // Basic Website
               break;
-          case "2":
+          case "business":
               baseCost = 1000; // Business Website
               break;
-          case "3":
+          case "ecommerce":
               baseCost = 2000; // E-commerce Website
               break;
           default:
@@ -175,38 +175,31 @@ document.addEventListener("DOMContentLoaded", function () {
           <h3><strong>Total Cost:</strong> $${totalCost}</h3>
       `;
       resultContainer.innerHTML = resultHTML;
-  });
-});
 
-// JavaScript logic for handling form submission
-document.querySelector('.calculator').addEventListener('submit', function(event) {
-  event.preventDefault();
+      // Prepare data for Google Form
+      const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdfgdfgdfgdfgdfgdfgdfgdfgdfgdfg/viewform"; // Replace with your Google Form URL
+      const formDataObject = {
+          "entry.123456789": websiteType, // Replace with the correct entry ID
+          "entry.234567890": features.join(", "), // Replace with the correct entry ID
+          "entry.345678901": pages, // Replace with the correct entry ID
+          "entry.456789012": deadline, // Replace with the correct entry ID
+          "entry.567890123": email, // Replace with the correct entry ID
+          "entry.678901234": totalCost // Replace with the correct entry ID
+      };
+      const googleFormParams = new URLSearchParams(formDataObject).toString();
 
-  // Collect form data
-  const formData = new FormData(event.target);
-
-  // Convert formData to JSON
-  const jsonData = {};
-  formData.forEach((value, key) => {
-    jsonData[key] = value;
-  });
-
-  // Send data to backend or Google Sheets API using fetch or XMLHttpRequest
-  fetch('/backend/endpoint', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(jsonData)
-  })
-  .then(response => {
-    if (response.ok) {
-      // Show success message to the user
-    } else {
-      // Handle error
-    }
-  })
-  .catch(error => {
-    console.error('Error:', error);
+      // Send data to Google Form
+      fetch(`${googleFormUrl}?${googleFormParams}`, {
+          method: 'POST',
+          mode: 'no-cors'
+      }).then(() => {
+          // Show success message and redirect
+          setTimeout(() => {
+              alert('Your estimation has been sent successfully!');
+              window.location.href = './index.html'; // Redirect to homepage
+          }, 2000); // Adjust the delay as needed
+      }).catch(error => {
+          console.error('Error:', error);
+      });
   });
 });
