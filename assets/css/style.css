@@ -1574,3 +1574,97 @@ button:hover {
   .blog-card .card-title { --fs-4: 2.4rem; }
 
 }
+
+
+/* calpage style:::::............ */
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 20px;
+}
+
+/* Header */
+header {
+  background: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5em;
+}
+
+/* Form Styles */
+#calculator-form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group select {
+  cursor: pointer;
+}
+
+/* Result Styles */
+#calculator-result {
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.calculator-result-title {
+  margin-bottom: 10px;
+}
+
+/* Button Styles */
+.btn {
+  display: inline-block;
+  background: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #555;
+}

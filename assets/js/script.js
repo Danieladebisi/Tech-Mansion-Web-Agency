@@ -108,3 +108,105 @@ contactForm.addEventListener('submit', async function(event) {
   }
 });
 
+
+
+
+// Calpage Script :::::............................
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("calculator-form");
+  const resultContainer = document.getElementById("calculator-result");
+
+  form.addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      // Reset previous result
+      resultContainer.innerHTML = "";
+
+      // Collect form data
+      const formData = new FormData(form);
+      const websiteType = formData.get("website-type");
+      const features = formData.getAll("features");
+      const pages = parseInt(formData.get("pages"));
+      const deadline = formData.get("deadline");
+      const email = formData.get("email");
+
+      // Calculate total cost
+      let baseCost = 0;
+      switch (websiteType) {
+          case "1":
+              baseCost = 500; // Basic Website
+              break;
+          case "2":
+              baseCost = 1000; // Business Website
+              break;
+          case "3":
+              baseCost = 2000; // E-commerce Website
+              break;
+          default:
+              baseCost = 0;
+      }
+
+      // Calculate cost for additional features
+      let featuresCost = 0;
+      if (features.includes("responsive")) {
+          featuresCost += 200;
+      }
+      if (features.includes("cms")) {
+          featuresCost += 300;
+      }
+      if (features.includes("seo")) {
+          featuresCost += 500;
+      }
+      if (features.includes("social-media")) {
+          featuresCost += 300;
+      }
+
+      // Calculate total cost
+      const totalCost = baseCost + featuresCost * pages;
+
+      // Display result
+      const resultHTML = `
+          <h2 class="calculator-result-title">Estimated Cost</h2>
+          <p><strong>Base Cost:</strong> $${baseCost}</p>
+          <p><strong>Additional Features Cost:</strong> $${featuresCost}</p>
+          <p><strong>Total Pages:</strong> ${pages}</p>
+          <p><strong>Deadline:</strong> ${deadline}</p>
+          <p><strong>Email Address:</strong> ${email}</p>
+          <h3><strong>Total Cost:</strong> $${totalCost}</h3>
+      `;
+      resultContainer.innerHTML = resultHTML;
+  });
+});
+
+// JavaScript logic for handling form submission
+document.querySelector('.calculator').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  // Collect form data
+  const formData = new FormData(event.target);
+
+  // Convert formData to JSON
+  const jsonData = {};
+  formData.forEach((value, key) => {
+    jsonData[key] = value;
+  });
+
+  // Send data to backend or Google Sheets API using fetch or XMLHttpRequest
+  fetch('/backend/endpoint', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(jsonData)
+  })
+  .then(response => {
+    if (response.ok) {
+      // Show success message to the user
+    } else {
+      // Handle error
+    }
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+});

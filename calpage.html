@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Cost Calculator - Tech Mansion</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <header class="header" data-header>
+        <div class="container">
+            <a href="./index.html" class="logo">
+                <img src="./images/Tech Mansion Web Agency Logo 200x 80.png" alt="Tech Mansion Web Agency Logo" width="200" height="70">
+            </a>
+        </div>
+    </header>
+
+    <main class="calculator">
+        <div class="container">
+            <h1 class="calculator-title">Website Cost Calculator</h1>
+            <form id="calculator-form" class="calculator-form">
+                <div class="form-group">
+                    <label for="website-type">Select Website Type:</label>
+                    <select name="website-type" id="website-type" required>
+                        <option value="">Select Website Type</option>
+                        <option value="1">Basic Website</option>
+                        <option value="2">Business Website</option>
+                        <option value="3">E-commerce Website</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="features">Select Additional Features:</label>
+                    <select name="features" id="features" multiple required>
+                        <option value="responsive">Responsive Design</option>
+                        <option value="cms">Content Management System (CMS)</option>
+                        <option value="seo">SEO Optimization</option>
+                        <option value="social-media">Social Media Integration</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="pages">Number of Pages:</label>
+                    <input type="number" name="pages" id="pages" min="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="deadline">Project Deadline:</label>
+                    <input type="date" name="deadline" id="deadline" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" name="email" id="email" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Calculate</button>
+            </form>
+            <div id="calculator-result" class="calculator-result"></div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">© <script>document.write(new Date().getFullYear())</script> Tech Mansion. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="./assets/js/calculator.js" defer></script>
+</body>
+
+</html>
