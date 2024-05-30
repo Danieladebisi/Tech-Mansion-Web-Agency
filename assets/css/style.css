@@ -1578,6 +1578,7 @@ button:hover {
 
 /* calpage style:::::............ */
 /* Reset CSS */
+/* Reset CSS */
 * {
   margin: 0;
   padding: 0;
@@ -1586,10 +1587,10 @@ button:hover {
 
 /* Global Styles */
 body {
-  font-family: 'DM Sans', sans-serif; /* Changed font */
+  font-family: 'DM Sans', sans-serif;
   background-color: #f4f4f4;
   color: #333;
-  margin: 0; /* Removed margin */
+  margin: 0;
 }
 
 .container {
@@ -1635,17 +1636,18 @@ header .logo {
 .form-group label {
   display: block;
   font-weight: bold;
-  margin-bottom: 5px; /* Added spacing */
+  margin-bottom: 5px;
 }
 
-.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="date"],
 .form-group input[type="email"],
 .form-group select {
-  width: 100%;
+  width: calc(100% - 22px); /* Adjusted width */
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  transition: border-color 0.3s ease; /* Added transition */
+  transition: border-color 0.3s ease;
 }
 
 .form-group select {
@@ -1656,7 +1658,7 @@ header .logo {
 .form-group input[type="date"]:focus,
 .form-group input[type="email"]:focus,
 .form-group select:focus {
-  border-color: #333; /* Changed focus border color */
+  border-color: #333;
 }
 
 /* Result Styles */
@@ -1682,7 +1684,7 @@ header .logo {
   cursor: pointer;
   border-radius: 5px;
   text-decoration: none;
-  transition: background-color 0.3s ease; /* Added transition */
+  transition: background-color 0.3s ease;
 }
 
 .btn:hover {
