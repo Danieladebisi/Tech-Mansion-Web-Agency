@@ -1586,17 +1586,15 @@ button:hover {
 
 /* Global Styles */
 body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
+  font-family: 'DM Sans', sans-serif; /* Changed font */
   background-color: #f4f4f4;
   color: #333;
-  margin: 20px;
+  margin: 0; /* Removed margin */
 }
 
 .container {
   max-width: 1200px;
   margin: auto;
-  overflow: hidden;
   padding: 0 20px;
 }
 
@@ -1608,16 +1606,26 @@ header {
   text-align: center;
 }
 
-header h1 {
-  font-size: 2.5em;
+header .logo {
+  display: block;
+  margin: 0 auto;
 }
 
 /* Form Styles */
-#calculator-form {
+.calculator {
+  padding: 40px 0;
+}
+
+.calculator-title {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.calculator-form {
   background: #fff;
   padding: 20px;
   border-radius: 5px;
-  margin-bottom: 20px;
 }
 
 .form-group {
@@ -1627,6 +1635,7 @@ header h1 {
 .form-group label {
   display: block;
   font-weight: bold;
+  margin-bottom: 5px; /* Added spacing */
 }
 
 .form-group input[type="text"],
@@ -1636,20 +1645,30 @@ header h1 {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  transition: border-color 0.3s ease; /* Added transition */
 }
 
 .form-group select {
   cursor: pointer;
 }
 
+.form-group input[type="number"]:focus,
+.form-group input[type="date"]:focus,
+.form-group input[type="email"]:focus,
+.form-group select:focus {
+  border-color: #333; /* Changed focus border color */
+}
+
 /* Result Styles */
-#calculator-result {
+.calculator-result {
   background: #f4f4f4;
   padding: 20px;
   border-radius: 5px;
+  margin-top: 20px;
 }
 
 .calculator-result-title {
+  font-size: 1.2em;
   margin-bottom: 10px;
 }
 
@@ -1663,6 +1682,7 @@ header h1 {
   cursor: pointer;
   border-radius: 5px;
   text-decoration: none;
+  transition: background-color 0.3s ease; /* Added transition */
 }
 
 .btn:hover {
